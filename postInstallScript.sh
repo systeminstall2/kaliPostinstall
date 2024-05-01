@@ -20,4 +20,6 @@ echo "export PATH=/home/kali/.local/bin:\$PATH" >> ~/.zshenv
 git clone https://github.com/systeminstall2/systeminstall
 rm -rf ~/.config/lvim && cp systeminstall/lvim ~/.config/lvim -r
 mkdir -p ~/.config/terminator && cat systeminstall/terminator > ~/.config/terminator/config
-git clone https://github.com/danielmiessler/Seclists
+cd ~/ && git clone https://github.com/danielmiessler/Seclists
+mkdir fonts && cd fonts && wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip" && unzip Hack.zip && sudo mkdir -p /usr/local/share/fonts && rm Hack.zip && sudo mv * /usr/local/share/fonts/ && cd ..
+cd fonts && wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip" && unzip JetBrainsMono.zip && rm JetBrainsMono.zip && sudo mv * /usr/local/share/fonts/ && cd ..
