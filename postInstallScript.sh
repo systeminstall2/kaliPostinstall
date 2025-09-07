@@ -5,7 +5,7 @@ echo 'export RUSTUP_HOME=/opt/rust' | sudo tee -a /etc/profile.d/rust.sh
 echo 'export PATH=$PATH:/opt/rust/bin' | sudo tee -a /etc/profile.d/rust.sh
 source ~/.cargo/env
 source /etc/profile
-sudo apt-get install -y terminator ripgrep feroxbuster xclip kali-desktop-kde cargo
+sudo apt install -y terminator ripgrep feroxbuster xclip kali-desktop-kde cargo
 wget https://github.com/neovim/neovim/releases/download/nightly/nvim.appimage
 sudo chmod +x nvim.appimage
 sudo mv nvim.appimage /usr/bin/nvim
@@ -15,6 +15,7 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 LV_BRANCH='release-1.3/neovim-0.9'
+sudo apt install -y neovim # Kali is rolling release don't have to deal with a manual install
 cp nvimConfig ~/.config/nvim -r
 echo "export PATH=/home/kali/.local/bin:\$PATH" >> ~/.zshenv
 git clone https://github.com/systeminstall2/systeminstall
