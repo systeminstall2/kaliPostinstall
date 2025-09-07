@@ -15,10 +15,9 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 nvm install --lts
 LV_BRANCH='release-1.3/neovim-0.9'
-curl -s "https://raw.githubusercontent.com/LunarVim/LunarVim/release-1.3/neovim-0.9/utils/installer/install.sh" > installLunarvim.sh && sudo chmod +x installLunarvim.sh && yes | ./installLunarvim.sh
+git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 echo "export PATH=/home/kali/.local/bin:\$PATH" >> ~/.zshenv
 git clone https://github.com/systeminstall2/systeminstall
-rm -rf ~/.config/lvim && cp systeminstall/lvim ~/.config/lvim -r
 mkdir -p ~/.config/terminator && cat systeminstall/terminator > ~/.config/terminator/config
 cd ~/ && git clone https://github.com/danielmiessler/Seclists
 mkdir fonts && cd fonts && wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.1.1/Hack.zip" && unzip Hack.zip && sudo mkdir -p /usr/local/share/fonts && rm Hack.zip && sudo mv * /usr/local/share/fonts/ && cd ..
